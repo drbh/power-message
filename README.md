@@ -1,5 +1,26 @@
 # Power Message
 
+## What the `!#*?` is this?
+Power Message is a simple two part program that allows you to safely control your iMessage account with a REST API. This program assumes you have a Message enabled Apple device and a phone number you'd like to text (that is not the phone number connected to the iMessage account)
+
+The project goal is to break the blue text free! Apple does not provide any API for thier messaging service, and is not likely to happen soon (if ever).
+
+So we propose a simple, owner controller, safe and easy way for a user to extend the capabilies of thier Apple computer and access their messages from anywhere in the work! 
+
+It is important to note that we are not reverse engineering the iMessage API, we essentially provide Mac owners a convinent and secure way to remotely access thier computer and programmatically interact with iMessage. 
+
+## Sounds cool, 😎 what can it do?
+
+This beta supports a hanful of functionality:
+1) Create/Read/Update/Delete user managment
+2) JWT powered access control
+3) Python client that can programatically access the API
+4) realtime websocket message relaying from Apple device to secure server
+5) ** Statistical analysis of emojis, and average response times 
+6) ** Websocket connection to subscriber to incomming message in realtime
+
+** means the core functionality is implemented but not documented.
+
 ## 🚴‍♀️ Get Going
 
 First we start our server. This server will control our iMessage client, it allows us to send and recieve iMessages via a simple REST api. 
@@ -88,11 +109,37 @@ We can see that the user we just made has an ID of 1. We'll use this to send tha
 pmc.send_message("1", "Send a iMessage via REST")
 ```
 
+<img src="public/sender.png" alt="Logo">
 
+and then on the phone (whos phone number we set above)
 
-# Important notes
+<img src="public/receiver.png" alt="Logo">
+
+🎉 yay, sending iMessages over REST is easy!
+
+# 📝Notes
+
+### keys 
 
 Please generate your own keys!
 
 The keys provided in the `keys` are for demonstration purposes only! I suggest using openssl to generate new keys - even for your demo app just to be secure.
 
+### compilation
+
+The two included libraries are binaries combiled for a MacBookPro
+
+```bash
+$ sw_vers
+ProductName:	Mac OS X
+ProductVersion:	10.14.5
+BuildVersion:	18F132
+```
+
+OSX will always be the build target (since its the only hardware that can connect to Apple's Messages service.
+
+### source code and the future
+
+As of now this project is closed source but the binaries are freely available. In this inital release only the core functionality is accessible via the pre compiled binary - but I plan on adding some declaritive config files. This way people can easily deploy their relay servers in a cloud and use simple CLI tools to setup all the configurations.
+
+Also - I'm not exactly sure whats next. Depending on the issues and responses from this inital release the future of the program will be based on what features help the maximum amount of users. 
