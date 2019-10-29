@@ -27,7 +27,16 @@ First we start our server. This server will control our iMessage client, it allo
 
 In this functional demo - both the server and client will be on the same machine, but if your interested in running the server in the cloud so you can access it from anywhere in the world 🌎 please shoot me an email!
 
+First clone the repo - it contains the pre-compiled apps!
+```bash
+git clone https://github.com/drbh/power-message.git
+cd power-message
+```
+
+Your gonna need to run 2 terminal windows and execute the following apps
+
 ## Relay and REST server
+In the first terminal
 ```bash
 ./relay-server
 ```
@@ -37,6 +46,7 @@ Next we have to turn on our client. This client sends and recieves all of your i
 Note: you will have to grant `Full Disk Access` to the `terminal` app since Apple has impelented a new security system that locks down Apple services like Mail, Safari and Messages. **If you do not grant the `terminal` access. power-message will not have permission to read the Messsage database - and the app will not work**
 
 ## Message Client
+In the second terminal
 ```bash
 ./message-client
 ```
