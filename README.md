@@ -5,7 +5,7 @@ Power Message is a simple two part program that allows you to safely control you
 
 The project goal is to break the blue text free! Apple does not provide any API for thier messaging service, and is not likely to happen soon (if ever).
 
-So we propose a simple, owner controller, safe and easy way for a user to extend the capabilies of thier Apple computer and access their messages from anywhere in the work! 
+So we propose a simple, owner controller, safe and easy way for a user to extend the capabilies of thier Apple computer and access their messages from anywhere in the world! 
 
 It is important to note that we are not reverse engineering the iMessage API, we essentially provide Mac owners a convinent and secure way to remotely access thier computer and programmatically interact with iMessage. 
 
